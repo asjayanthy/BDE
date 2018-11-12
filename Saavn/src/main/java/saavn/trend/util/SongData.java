@@ -3,6 +3,8 @@ package saavn.trend.util;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
@@ -14,6 +16,7 @@ public class SongData implements WritableComparable<SongData> {
 	private Text userID;
 	private Text dateOfPlay;
 	private Text timeStamp;
+	private Map<String, Integer> dateWiseSongsCount; 
 
 	public SongData() {
 		super();
@@ -22,6 +25,7 @@ public class SongData implements WritableComparable<SongData> {
 		this.userID = new Text();
 		this.dateOfPlay = new Text();
 		this.timeStamp = new Text();
+		this.dateWiseSongsCount = new HashMap<String, Integer>();
 	}
 
 	public SongData(Text songID, Text hourOfPlay, Text userID, Text dateOfPlay, Text timeStamp) {
