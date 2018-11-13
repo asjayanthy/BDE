@@ -21,6 +21,7 @@ public class SaavnMapper extends Mapper<LongWritable, Text, TextPair, IntWritabl
 		if (st.length == 5 && Utilities.isNotNullOrEmpty(st[0]) && Utilities.isNotNullOrEmpty(st[4]) && !"(null)".equals(st[0])) {
 
 				TextPair _tp = new TextPair(st[0].trim(), st[4].trim());
+				System.out.println("@@@ "+ _tp.toString());
 				context.write(_tp, one);				
 			
 		}

@@ -85,7 +85,6 @@ public class TextPair implements WritableComparable<Object> {
 	}
 
 	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
