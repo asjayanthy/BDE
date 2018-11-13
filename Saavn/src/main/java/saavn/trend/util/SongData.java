@@ -35,6 +35,9 @@ public class SongData implements WritableComparable<SongData> {
 		this.userID = userID;
 		this.dateOfPlay = dateOfPlay;
 		this.timeStamp = timeStamp;
+		this.dateWiseSongsCount = new HashMap<String, Integer>();
+		updateDateWiseSongsCount(this.dateOfPlay.toString() + ":" +this.songID);
+		
 	}
 
 	@Override
@@ -159,6 +162,15 @@ public class SongData implements WritableComparable<SongData> {
 		return true;
 	}
 	
+	private void updateDateWiseSongsCount(String key) {
+		if(dateWiseSongsCount.containsKey(key)) {
+			int currentCount = dateWiseSongsCount.get(key).intValue();
+			currentCount++;
+			dateWiseSongsCount.put(key, currentCount);
+		} else {
+			dateWiseSongsCount.put(key, 1);
+		}
+	}
 	
 
 }
