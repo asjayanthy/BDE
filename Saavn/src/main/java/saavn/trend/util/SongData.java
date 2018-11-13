@@ -127,38 +127,48 @@ public class SongData implements WritableComparable<SongData> {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		SongData other = (SongData) obj;
 		if (dateOfPlay == null) {
 			if (other.dateOfPlay != null)
 				return false;
-		} else if (!dateOfPlay.equals(other.dateOfPlay))
+		} else if (!dateOfPlay.equals(other.dateOfPlay)) {
 			return false;
+		}
 		if (hourOfPlay == null) {
 			if (other.hourOfPlay != null)
 				return false;
-		} else if (!hourOfPlay.equals(other.hourOfPlay))
+		} else if (!hourOfPlay.equals(other.hourOfPlay)) {
 			return false;
+		}
 		if (songID == null) {
 			if (other.songID != null)
 				return false;
-		} else if (!songID.equals(other.songID))
+		} else if (!songID.equals(other.songID)) {
 			return false;
+		}
 		if (timeStamp == null) {
-			if (other.timeStamp != null)
+			if (other.timeStamp != null) {
 				return false;
-		} else if (!timeStamp.equals(other.timeStamp))
+			}
+		} else if (!timeStamp.equals(other.timeStamp)) {
 			return false;
+		}
 		if (userID == null) {
-			if (other.userID != null)
+			if (other.userID != null) {
 				return false;
-		} else if (!userID.equals(other.userID))
+			}
+		} else if (!userID.equals(other.userID)) {
 			return false;
+		}
 		return true;
 	}
 	
